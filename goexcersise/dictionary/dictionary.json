@@ -1,0 +1,1877 @@
+[  {
+  "attrKey": "genetics",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "genetics": "Genetics" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "genetic_event",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "genetic_event": "Genetic Event" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "previous_crop",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "previous_crop": "Previous Crops" },
+  "displayType": "multi_select",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "seed_protector",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "seed_protector": "Seed Protector" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "seed_protector_description",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "seed_protector_description": "Protector Description" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "space_between_rows_m",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "space_between_rows_m": "Space Between Rows" },
+  "displayType": "number",
+  "unit": { "space_between_rows_m": "inches" },
+  "validationRules": {
+    "space_between_rows_m": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", false, false] }
+    ]
+  }
+},
+{
+  "attrKey": "seeds_per_m2",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": {
+    "seeds_per_m2": "Seed Density",
+    "target": "Target Seed Density",
+    "result": "Actual Seed Density"
+  },
+  "displayType": "target_result",
+  "unit": { "seeds_per_m2": "seeds/ft2", "target": "seeds/ft2", "result": "seeds/ft2" },
+  "validationRules": {
+    "target": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", false, false] }
+    ],
+    "result": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "kg_per_m2",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": {
+    "kg_per_m2": "Seed Weight",
+    "target": "Target Seed Weight",
+    "result": "Actual Seed Weight"
+  },
+  "displayType": "target_result",
+  "unit": { "kg_per_m2": "lb/ac", "target": "lb/ac", "result": "lb/ac" },
+  "validationRules": {
+    "target": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", false, false] }
+    ],
+    "result": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "plant_per_m2",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": {
+    "plant_per_m2": "Plant Density",
+    "target": "Target Plant Density",
+    "result": "Actual Plant Density"
+  },
+  "displayType": "target_result",
+  "unit": { "plant_per_m2": "plants/ft2", "target": "plants/ft2", "result": "plants/ft2" },
+  "validationRules": {
+    "target": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", false, false] }
+    ],
+    "result": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "achievement_coefficiency",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": {
+    "achievement_coefficiency": "Achievement Coefficiency",
+    "target": "Target Achievement Coefficiency",
+    "result": "Actual Achievement Coefficiency"
+  },
+  "displayType": "target_result",
+  "unit": { "achievement_coefficiency": "%", "target": "%", "result": "%" },
+  "validationRules": {
+    "target": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 100, false, true] }
+    ],
+    "result": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 100, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "kg_per_1000_seeds",
+  "decimal": 3,
+  "modifier": 1,
+  "displayName": { "kg_per_1000_seeds": "1000 Seed Weight" },
+  "displayType": "number",
+  "unit": { "kg_per_1000_seeds": "lb", "target": "lb", "result": "lb" },
+  "validationRules": {
+    "kg_per_1000_seeds": [
+      { "key": "decimal", "params": [0, 3] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "germinative_power",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": { "germinative_power": "Germinative Power" },
+  "displayType": "number",
+  "unit": { "germinative_power": "%", "target": "%", "result": "%" },
+  "validationRules": {
+    "germinative_power": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 100, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "uniformity",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": { "uniformity": "Uniformity of Sowing" },
+  "displayType": "number",
+  "unit": { "uniformity": "%", "target": "%", "result": "%" },
+  "validationRules": {
+    "uniformity": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 100, false, true] }
+    ]
+  }
+},
+{
+  "attrKey": "crop_class",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "crop_class": "Crop Class" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "expected_yield_kg_per_m2",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "expected_yield_kg_per_m2": "Expected Yield" },
+  "displayType": "number",
+  "unit": { "expected_yield_kg_per_m2": "lb/ac", "target": "lb/ac", "result": "lb/ac" },
+  "validationRules": {
+    "expected_yield_kg_per_m2": [
+      { "key": "decimal", "params": [0, 0] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", false, false] }
+    ]
+  }
+},
+{
+  "attrKey": "cycle_duration",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "cycle_duration": "Cycle Duration" },
+  "displayType": "select",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "dose_kg_per_m2",
+  "decimal": 3,
+  "modifier": 1,
+  "displayName": {
+    "dose_kg_per_m2": "Fertilizer Dose",
+    "target": "Target Fertilizer Dose",
+    "result": "Actual Fertilizer Dose"
+  },
+  "displayType": "target_result",
+  "unit": { "dose_kg_per_m2": "lb/ac", "target": "lb/ac", "result": "lb/ac" },
+  "validationRules": {
+    "target": [
+      { "key": "decimal", "params": [0, 3] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", false, false] }
+    ],
+    "result": [
+      { "key": "decimal", "params": [0, 3] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", false, false] }
+    ]
+  }
+},
+{
+  "attrKey": "nitrogen_fraction",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": { "nitrogen_fraction": "Nitrogen" },
+  "displayType": "number",
+  "unit": { "nitrogen_fraction": "%" },
+  "validationRules": {
+    "nitrogen_fraction": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 100, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "phosphate_fraction",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": { "phosphate_fraction": "Phosphate" },
+  "displayType": "number",
+  "unit": { "phosphate_fraction": "%" },
+  "validationRules": {
+    "phosphate_fraction": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 100, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "sulphur_fraction",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": { "sulphur_fraction": "Sulfur" },
+  "displayType": "number",
+  "unit": { "sulphur_fraction": "%" },
+  "validationRules": {
+    "sulphur_fraction": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 100, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "potash_fraction",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": { "potash_fraction": "Potash" },
+  "displayType": "number",
+  "unit": { "potash_fraction": "%" },
+  "validationRules": {
+    "potash_fraction": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 100, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "actual_yield",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": {
+    "actual_yield": "Actual Yield",
+    "volume_liter": "Actual Yield",
+    "mass_kg": "Actual Yield"
+  },
+  "displayType": "volume_mass",
+  "unit": {
+    "volume_liter": "gal/ac",
+    "mass_kg": "lb/ac"
+  },
+  "validationRules": {}
+},
+{
+  "attrKey": "predicted_yield",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": {
+    "predicted_yield": "Predicted Yield",
+    "volume_liter": "Predicted Yield",
+    "mass_kg": "Predicted Yield"
+  },
+  "displayType": "volume_mass",
+  "unit": {
+    "volume_liter": "gal/ac",
+    "mass_kg": "lb/ac"
+  },
+  "validationRules": {
+    "volume_liter": [
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ],
+    "mass_kg": [
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "yield_driver_element",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": {},
+  "displayType": "element",
+  "unit": { "yield_driver_element": "lb/ac" },
+  "validationRules": {}
+},
+{
+  "attrKey": "yield_rate",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": { "yield_rate": "Yield Rate" },
+  "displayType": "number",
+  "unit": { "yield_rate": "%" },
+  "validationRules": {
+    "yield_rate": [
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "yield_kg_per_ha",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "yield_kg_per_ha": "Yield" },
+  "displayType": "number",
+  "unit": { "yield_kg_per_ha": "lb/ac" },
+  "validationRules": {
+    "yield_kg_per_ha": [
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "disease_reason",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "disease_reason": "Disease Reason" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "disease_type",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "disease_type": "Disease Type" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "disease_controlled",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "disease_controlled": "Disease Controlled" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "application_name",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "application_name": "Application Name" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "application_type",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "application_type": "Application Type" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "application_method",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "application_method": "Application Method" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "material_unit",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "material_unit": "Material unit" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "total_material",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": {
+    "total_material": "Total Material",
+    "target": "Total Material Target",
+    "result": "Total Material Result"
+  },
+  "displayType": "target_result",
+  "unit": {},
+  "validationRules": {
+    "target": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", false, false] }
+    ],
+    "result": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "average_material_per_ha",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": {
+    "average_material_per_ha": "Avg. Material",
+    "target": "Avg. Material Target",
+    "result": "Avg. Material Result"
+  },
+  "displayType": "target_result",
+  "unit": {},
+  "validationRules": {
+    "target": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ],
+    "result": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "average_speed_km_per_hour",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": {
+    "average_speed_km_per_hour": "Avg. Speed",
+    "target": "Avg. Speed Target",
+    "result": "Avg. Speed Result"
+  },
+  "displayType": "target_result",
+  "unit": {},
+  "validationRules": {
+    "target": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ],
+    "result": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "area_ha",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": {
+    "area_ha": "Area",
+    "target": "Area Target",
+    "result": "Area Result"
+  },
+  "displayType": "target_result",
+  "unit": {},
+  "validationRules": {
+    "target": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ],
+    "result": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "crop_descripiton",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "crop_descripiton": "Crop Descripiton" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "yield_per_m2_planted",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": {
+    "yield_per_m2_planted": "Planted Yield",
+    "volume_liter": "Planted Yield Volume",
+    "mass_kg": "Planted Yield Weight"
+  },
+  "displayType": "volume_mass",
+  "unit": { "volume_liter": "bu/ac", "mass_kg": "lb/ac" },
+  "validationRules": {
+    "volume_liter": [
+      { "key": "decimal", "params": [0, 0] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ],
+    "mass_kg": [
+      { "key": "decimal", "params": [0, 1] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "yield_per_m2_harvested",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": {
+    "yield_per_m2_harvested": "Harvested Yield",
+    "volume_liter": "Harvested Yield Volume",
+    "mass_kg": "Harvested Yield Weight"
+  },
+  "displayType": "volume_mass",
+  "unit": { "volume_liter": "bu/ac", "mass_kg": "lb/ac" },
+  "validationRules": {
+    "volume_liter": [
+      { "key": "decimal", "params": [0, 0] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ],
+    "mass_kg": [
+      { "key": "decimal", "params": [0, 0] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "total_production",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": {
+    "total_production": "Total Production",
+    "volume_liter": "Total Production Volume",
+    "mass_kg": "Total Production Weight"
+  },
+  "displayType": "volume_mass",
+  "unit": { "volume_liter": "gal/ac", "mass_kg": "lb/ac" },
+  "validationRules": {
+    "volume_liter": [
+      { "key": "decimal", "params": [0, 0] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ],
+    "mass_kg": [
+      { "key": "decimal", "params": [0, 0] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "wet_yield_per_m2_planted",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": {
+    "wet_yield_per_m2_planted": "Planted Wet Yield",
+    "volume_liter": "Planted Wet Yield Volume",
+    "mass_kg": "Planted Wet Yield Weight"
+  },
+  "displayType": "volume_mass",
+  "unit": { "volume_liter": "gal/ac", "mass_kg": "lb/ac" },
+  "validationRules": {
+    "volume_liter": [
+      { "key": "decimal", "params": [0, 0] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ],
+    "mass_kg": [
+      { "key": "decimal", "params": [0, 0] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "wet_yield_per_m2_harvested",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": {
+    "wet_yield_per_m2_harvested": "Harvested Wet Yield",
+    "volume_liter": "Harvested Wet Yield Volume",
+    "mass_kg": "Harvested Wet Yield Weight"
+  },
+  "displayType": "volume_mass",
+  "unit": { "volume_liter": "gal/ac", "mass_kg": "lb/ac" },
+  "validationRules": {
+    "volume_liter": [
+      { "key": "decimal", "params": [0, 0] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ],
+    "mass_kg": [
+      { "key": "decimal", "params": [0, 0] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "wet_total_yield",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": {
+    "wet_total_yield": "Wet Total Production",
+    "volume_liter": "Wet Total Production Volume",
+    "mass_kg": "Wet Total Production Weight"
+  },
+  "displayType": "volume_mass",
+  "unit": { "volume_liter": "gal", "mass_kg": "lb" },
+  "validationRules": {
+    "volume_liter": [
+      { "key": "decimal", "params": [0, 0] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ],
+    "mass_kg": [
+      { "key": "decimal", "params": [0, 0] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "average_moisture",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "average_moisture": "Harvest Average Moisture" },
+  "displayType": "number",
+  "unit": { "average_moisture": "%" },
+  "validationRules": {
+    "average_moisture": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 100, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "number_of_spikes_per_m2",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "number_of_spikes_per_m2": "Spike Density" },
+  "displayType": "number",
+  "unit": { "number_of_spikes_per_m2": "spikes/ft2" },
+  "validationRules": {
+    "number_of_spikes_per_m2": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "number_of_beads_per_spike",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "number_of_beads_per_spike": "Beads Density on Spike" },
+  "displayType": "number",
+  "unit": { "number_of_beads_per_spike": "beads/spike" },
+  "validationRules": {
+    "number_of_beads_per_spike": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "gluten",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": { "gluten": "Gluten Percentage" },
+  "displayType": "number",
+  "unit": { "gluten": "%" },
+  "validationRules": {
+    "gluten": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "protein",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": { "protein": "Protein Percentage" },
+  "displayType": "number",
+  "unit": { "protein": "%" },
+  "validationRules": {
+    "protein": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "caliber",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": { "caliber": "Caliber Percentage" },
+  "displayType": "number",
+  "unit": { "caliber": "%" },
+  "validationRules": {
+    "caliber": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 100, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "fat_matter_fraction",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": { "fat_matter_fraction": "Fat Matter Percentage" },
+  "displayType": "number",
+  "unit": { "fat_matter_fraction": "%" },
+  "validationRules": {
+    "fat_matter_fraction": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 100, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "sand_fraction_in_topsoil",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": { "sand_fraction_in_topsoil": "Topsoil Sand Fraction" },
+  "displayType": "number",
+  "unit": { "sand_fraction_in_topsoil": "%" },
+  "validationRules": {
+    "sand_fraction_in_topsoil": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 100, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "lime_fraction_in_topsoil",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": { "lime_fraction_in_topsoil": "Topsoil Lime Fraction" },
+  "displayType": "number",
+  "unit": { "lime_fraction_in_topsoil": "%" },
+  "validationRules": {
+    "lime_fraction_in_topsoil": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 100, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "clay_fraction_in_topsoil",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": { "clay_fraction_in_topsoil": "Topsoil Clay Fraction" },
+  "displayType": "number",
+  "unit": { "clay_fraction_in_topsoil": "%" },
+  "validationRules": {
+    "clay_fraction_in_topsoil": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 100, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "organic_matter_fraction_in_topsoil",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": { "organic_matter_fraction_in_topsoil": "Topsoil Organic Matter Fraction" },
+  "displayType": "number",
+  "unit": { "organic_matter_fraction_in_topsoil": "%" },
+  "validationRules": {
+    "organic_matter_fraction_in_topsoil": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 100, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "p_in_top_soil_ppm",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": {
+    "p_in_top_soil_ppm": "Topsoil Phosphate",
+    "target": "Target Topsoil Phosphate",
+    "result": "Actual Topsoil Phosphate"
+  },
+  "displayType": "target_result",
+  "unit": {
+    "p_in_top_soil_ppm": "ppm",
+    "target": "ppm",
+    "result": "ppm"
+  },
+  "validationRules": {
+    "target": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 1000000, false, true] }
+    ],
+    "result": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 1000000, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "n_in_soil_kg_per_m2",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": {
+    "n_in_soil_kg_per_m2": "Soil Nitrogen",
+    "target": "Target Soil Nitrogen",
+    "result": "Actual Soil Nitrogen"
+  },
+  "displayType": "target_result",
+  "unit": {
+    "n_in_soil_kg_per_m2": "lb/ac",
+    "target": "lb/ac",
+    "result": "lb/ac"
+  },
+  "validationRules": {
+    "target": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", false, false] }
+    ],
+    "result": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "n_in_top_soil_ppm",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "n_in_top_soil_ppm": "Topsoil Nitrogen" },
+  "displayType": "number",
+  "unit": { "n_in_top_soil_ppm": "ppm" },
+  "validationRules": {
+    "n_in_top_soil_ppm": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 1000000, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "n_in_mid_soil_ppm",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "n_in_mid_soil_ppm": "Midsoil Nitrogen" },
+  "displayType": "number",
+  "unit": { "n_in_mid_soil_ppm": "ppm" },
+  "validationRules": {
+    "n_in_mid_soil_ppm": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 1000000, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "n_in_bottom_soil_ppm",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "n_in_bottom_soil_ppm": "Bottomsoil Nitrogen" },
+  "displayType": "number",
+  "unit": { "n_in_bottom_soil_ppm": "ppm" },
+  "validationRules": {
+    "n_in_bottom_soil_ppm": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 1000000, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "s_in_topsoil_ppm",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": {
+    "s_in_topsoil_ppm": "Topsoil Sulfur",
+    "target": "Target Topsoil Sulfur",
+    "result": "Actual Topsoil Sulfur"
+  },
+  "displayType": "target_result",
+  "unit": {
+    "s_in_topsoil_ppm": "ppm",
+    "target": "ppm",
+    "result": "ppm"
+  },
+  "validationRules": {
+    "target": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 1000000, false, true] }
+    ],
+    "result": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 1000000, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "ph_in_topsoil",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "ph_in_topsoil": "Bottomsoil Nitrogen" },
+  "displayType": "number",
+  "unit": {},
+  "validationRules": {
+    "ph_in_topsoil": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 14, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "ph_in_midsoil",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "ph_in_midsoil": "Midsoil pH" },
+  "displayType": "number",
+  "unit": {},
+  "validationRules": {
+    "ph_in_midsoil": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 14, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "ph_in_bottomsoil",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "ph_in_bottomsoil": "Bottomsoil pH" },
+  "displayType": "number",
+  "unit": {},
+  "validationRules": {
+    "ph_in_bottomsoil": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 14, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "water_in_midsoil",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "water_in_midsoil": "Midsoil Water" },
+  "displayType": "number",
+  "unit": {},
+  "validationRules": {
+    "water_in_midsoil": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "ground_water_depth_m",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "ground_water_depth_m": "Ground Water Depth" },
+  "displayType": "number",
+  "unit": { "ground_water_depth_m": "ft" },
+  "validationRules": {
+    "ground_water_depth_m": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "analysis_ion",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "analysis_ion": "Analysis Ion" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "average_dose_per_m2",
+  "decimal": 3,
+  "modifier": 1,
+  "displayName": {
+    "average_dose_per_m2": "Average Fungicide Dose",
+    "volume_liter": "Average Fungicide Dose Volume",
+    "mass_kg": "Average Fungicide Dose Weight"
+  },
+  "displayType": "volume_mass",
+  "unit": { "average_dose_per_m2": "lb/ac", "volume_liter": "lb/ac", "mass_kg": "lb/ac" },
+  "validationRules": {
+    "volume_liter": [
+      { "key": "decimal", "params": [0, 3] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", false, false] }
+    ],
+    "mass_kg": [
+      { "key": "decimal", "params": [0, 3] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", false, false] }
+    ]
+  }
+},
+{
+  "attrKey": "phenological_state",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "phenological_state": "Phenological State" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "epidemic_type",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "epidemic_type": "Epidemic Type" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "epidemic_fraction",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": { "epidemic_fraction": "Epidemic Fraction" },
+  "displayType": "number",
+  "unit": { "epidemic_fraction": "%" },
+  "validationRules": {
+    "epidemic_fraction": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 100, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "min_temperature_in_celsius_degrees",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "min_temperature_in_celsius_degrees": "Minimal Temperature" },
+  "displayType": "number",
+  "unit": { "min_temperature_in_celsius_degrees": "F" },
+  "validationRules": {
+    "min_temperature_in_celsius_degrees": [
+      { "key": "decimal", "params": [0, 0] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [-70, 60, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "max_temperature_in_celsius_degrees",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "max_temperature_in_celsius_degrees": "Maximal Temperature" },
+  "displayType": "number",
+  "unit": { "max_temperature_in_celsius_degrees": "F" },
+  "validationRules": {
+    "max_temperature_in_celsius_degrees": [
+      { "key": "decimal", "params": [0, 0] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [-70, 60, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "precipitation_accumulation_in_mms",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "precipitation_accumulation_in_mms": "Precipitation Accumulation" },
+  "displayType": "number",
+  "unit": { "precipitation_accumulation_in_mms": "mm" },
+  "validationRules": {
+    "precipitation_accumulation_in_mms": [
+      { "key": "decimal", "params": [0, 0] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "soil_moisture_in_mms",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "soil_moisture_in_mms": "Soil Moisture" },
+  "displayType": "number",
+  "unit": { "soil_moisture_in_mms": "mm" },
+  "validationRules": {
+    "soil_moisture_in_mms": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "actual_evapotranspiration_in_mms",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "actual_evapotranspiration_in_mms": "Evapotranspiration" },
+  "displayType": "number",
+  "unit": { "actual_evapotranspiration_in_mms": "mm" },
+  "validationRules": {
+    "actual_evapotranspiration_in_mms": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "reference_evapotranspiration_in_mms",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "reference_evapotranspiration_in_mms": "Reference Evapotranspiration" },
+  "displayType": "number",
+  "unit": { "reference_evapotranspiration_in_mms": "mm" },
+  "validationRules": {
+    "reference_evapotranspiration_in_mms": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "climate_water_deficit_in_mms",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "climate_water_deficit_in_mms": "Climate Water Deficit" },
+  "displayType": "number",
+  "unit": { "climate_water_deficit_in_mms": "mm" },
+  "validationRules": {
+    "climate_water_deficit_in_mms": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": ["MIN", 0, true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "vapor_pressure_in_kpa",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "vapor_pressure_in_kpa": "Vapor Pressure" },
+  "displayType": "number",
+  "unit": { "vapor_pressure_in_kpa": "kPa" },
+  "validationRules": {
+    "vapor_pressure_in_kpa": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "vapor_pressure_deficit_in_kpa",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "vapor_pressure_deficit_in_kpa": "Vapor Pressure Deficit" },
+  "displayType": "number",
+  "unit": { "vapor_pressure_deficit_in_kpa": "kPa" },
+  "validationRules": {
+    "vapor_pressure_deficit_in_kpa": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": ["MIN", 0, true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "palmer_drought_severity_index",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "palmer_drought_severity_index": "Palmer Drought Severity" },
+  "displayType": "number",
+  "unit": {},
+  "validationRules": {
+    "palmer_drought_severity_index": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [-10, 10, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "downward_surface_shortwave_radiation_in_watt_per_m2",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": {
+    "downward_surface_shortwave_radiation_in_watt_per_m2": "PDownward Surface Shortwave Radiation"
+  },
+  "displayType": "number",
+  "unit": { "downward_surface_shortwave_radiation_in_watt_per_m2": "W/m^2" },
+  "validationRules": {
+    "downward_surface_shortwave_radiation_in_watt_per_m2": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "wind_speed_in_meter_per_second",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "wind_speed_in_meter_per_second": "Wind Speed" },
+  "displayType": "number",
+  "unit": { "wind_speed_in_meter_per_second": "m/s" },
+  "validationRules": {
+    "wind_speed_in_meter_per_second": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "water_runoff_in_mms",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "water_runoff_in_mms": "Water Runoff" },
+  "displayType": "number",
+  "unit": { "water_runoff_in_mms": "mm" },
+  "validationRules": {
+    "water_runoff_in_mms": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "snow_water_equivalent_in_mms",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "snow_water_equivalent_in_mms": "Snow Water" },
+  "displayType": "number",
+  "unit": { "snow_water_equivalent_in_mms": "mm" },
+  "validationRules": {
+    "snow_water_equivalent_in_mms": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "yield_decrease",
+  "decimal": 2,
+  "modifier": 100,
+  "displayName": { "yield_decrease": "Percentage Damaged/hurt" },
+  "displayType": "number",
+  "unit": { "yield_decrease": "%" },
+  "validationRules": {
+    "yield_decrease": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 100, false, true] }
+    ]
+  }
+},
+{
+  "attrKey": "crop_type",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "crop_type": "Crops" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "field_size",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "field_size": "Field Size" },
+  "displayType": "number",
+  "unit": { "field_size": "ac" },
+  "validationRules": {
+    "field_size": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "is_crop_rotated",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "is_crop_rotated": "Crop Rotation" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "rotated_crop_types",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "rotated_crop_types": "Rotation Pattern" },
+  "displayType": "crop_type",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "confidence",
+  "decimal": 0,
+  "modifier": 100,
+  "displayName": { "confidence": "Rotation Accuracy" },
+  "displayType": "number",
+  "unit": { "confidence": "%" },
+  "validationRules": {}
+},
+{
+  "attrKey": "elevation_meter",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "elevation_meter": "Elevation" },
+  "displayType": "number",
+  "unit": { "elevation_meter": "feet" },
+  "validationRules": {
+    "elevation_meter": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 20000, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "slope_degree",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "slope_degree": "Slope" },
+  "displayType": "number",
+  "unit": { "slope_degree": "°" },
+  "validationRules": {
+    "slope_degree": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 90, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "area_in_hectares",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "area_in_hectares": "Area" },
+  "displayType": "number",
+  "unit": { "area_in_hectares": "ac" },
+  "validationRules": {
+    "area_in_hectares": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "compactness",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "compactness": "Compactness" },
+  "displayType": "number",
+  "unit": {},
+  "validationRules": {
+    "compactness": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 1, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "rectangularity",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "rectangularity": "Rectangularity" },
+  "displayType": "number",
+  "unit": {},
+  "validationRules": {
+    "rectangularity": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, 1, true, true] }
+    ]
+  }
+},
+{
+  "attrKey": "owner_name",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "owner_name": "Ownership Name" },
+  "displayType": "multi_select",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "address_line",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "address_line": "Address Line" },
+  "displayType": "multi_select",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "city_name",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "city_name": "City Name" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "state_name",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "state_name": "State Name" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "zipcode",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "zipcode": "Zipcode" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "distance_to_water_in_meters",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "distance_to_water_in_meters": "Distance to Water" },
+  "displayType": "number",
+  "unit": { "distance_to_water_in_meters": "miles" },
+  "validationRules": {
+    "distance_to_water_in_meters": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "distance_to_road_in_meters",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "distance_to_road_in_meters": "Distance to Road" },
+  "displayType": "number",
+  "unit": { "distance_to_road_in_meters": "miles" },
+  "validationRules": {
+    "distance_to_road_in_meters": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "distance_to_town_in_meters",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "distance_to_town_in_meters": "Distance to Town" },
+  "displayType": "number",
+  "unit": { "distance_to_town_in_meters": "miles" },
+  "validationRules": {
+    "distance_to_town_in_meters": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "crop_category",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "crop_category": "Crop Category" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "index",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "index": "Index" },
+  "displayType": "number",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "dominant_frequency",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "dominant_frequency": "Dominant Frequency" },
+  "displayType": "frequency",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "max_frequency",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "max_frequency": "Max Frequency" },
+  "displayType": "frequency",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "duration",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "duration": "Duration" },
+  "displayType": "duration",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "soil_texture_type",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "soil_texture_type": "Soil Texture Type" },
+  "displayType": "soil_texture_type",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "organic_carbon",
+  "decimal": 1,
+  "modifier": 1,
+  "displayName": { "organic_carbon": "Soil Organic Matter (%)" },
+  "displayType": "average",
+  "unit": { "organic_carbon": "%" },
+  "validationRules": {}
+},
+{
+  "attrKey": "histogram_of_ndvi",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "histogram_of_ndvi": "Histogram of NDVI" },
+  "displayType": "fixed_width_histogram",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "growing_degrees_day",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "growing_degrees_day": "Growing Degree Days" },
+  "displayType": "number",
+  "unit": {},
+  "validationRules": {
+    "growing_degrees_day": [
+      { "key": "decimal", "params": [0, 0] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "last_frost_time",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "last_frost_time": "Last Frost Time" },
+  "displayType": "date",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "first_frost_time",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "first_frost_time": "First Frost Time" },
+  "displayType": "date",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "hierarchical_label",
+  "decimal": 1,
+  "modifier": 1,
+  "displayName": { "hierarchical_label": "Hierarchical Label" },
+  "displayType": "number",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "cluster_annotation",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "cluster_annotation": "Cluster Annotation" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "component_name",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "component_name": "Component Name" },
+  "displayType": "string",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "component_percentage",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "component_percentage": "Component Percentage" },
+  "displayType": "number",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "sand_fraction",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "sand_fraction": "Sand" },
+  "displayType": "average",
+  "unit": { "sand_fraction": "%" },
+  "validationRules": {}
+},
+{
+  "attrKey": "silt_fraction",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "silt_fraction": "Silt" },
+  "displayType": "average",
+  "unit": { "silt_fraction": "%" },
+  "validationRules": {}
+},
+{
+  "attrKey": "clay_fraction",
+  "decimal": 0,
+  "modifier": 1,
+  "displayName": { "clay_fraction": "Clay" },
+  "displayType": "average",
+  "unit": { "clay_fraction": "%" },
+  "validationRules": {}
+},
+{
+  "attrKey": "ph_level",
+  "decimal": 1,
+  "modifier": 1,
+  "displayName": { "ph_level": "pH level" },
+  "displayType": "average_range",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "nitrogen_in_ppm",
+  "decimal": 1,
+  "modifier": 100,
+  "displayName": { "nitrogen_in_ppm": "Nitrogen" },
+  "displayType": "number",
+  "unit": { "nitrogen_in_ppm": "%" },
+  "validationRules": {}
+},
+{
+  "attrKey": "last_frost_time",
+  "decimal": 0,
+  "modifier": 0,
+  "displayName": { "last_frost_time": "Last Frost Time" },
+  "displayType": "staring",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "first_frost_time",
+  "decimal": 0,
+  "modifier": 0,
+  "displayName": { "first_frost_time": "First Frost Time" },
+  "displayType": "staring",
+  "unit": {},
+  "validationRules": {}
+},
+{
+  "attrKey": "planted_area_in_acres",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "planted_area_in_acres": "Planted Area" },
+  "displayType": "number",
+  "unit": { "planted_area_in_acres": "ac" },
+  "validationRules": {
+    "planted_area_in_acres": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "harvest_area_in_acres",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "harvest_area_in_acres": "Havested Area" },
+  "displayType": "number",
+  "unit": { "harvest_area_in_acres": "ac" },
+  "validationRules": {
+    "harvest_area_in_acres": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "yield_total_in_bushels",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "yield_total_in_bushels": "Yield Total" },
+  "displayType": "number",
+  "unit": { "yield_total_in_bushels": "bu" },
+  "validationRules": {
+    "yield_total_in_bushels": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "yield_total_in_kg",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "yield_total_in_kg": "Yield Total" },
+  "displayType": "number",
+  "unit": { "yield_total_in_kg": "bu" },
+  "validationRules": {
+    "yield_total_in_kg": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "yield_per_acre_in_bushels",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "yield_per_acre_in_bushels": "Yield per Acre" },
+  "displayType": "number",
+  "unit": { "yield_per_acre_in_bushels": "bu/ac" },
+  "validationRules": {
+    "yield_per_acre_in_bushels": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+},
+{
+  "attrKey": "yield_per_hacter_in_kg",
+  "decimal": 2,
+  "modifier": 1,
+  "displayName": { "yield_per_hacter_in_kg": "Average Yield per Acre" },
+  "displayType": "number",
+  "unit": { "yield_per_hacter_in_kg": "bu/ac" },
+  "validationRules": {
+    "yield_per_hacter_in_kg": [
+      { "key": "decimal", "params": [0, 2] },
+      { "key": "isNumber", "params": [] },
+      { "key": "range", "params": [0, "MAX", true, false] }
+    ]
+  }
+}
+]

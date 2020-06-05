@@ -1,0 +1,18 @@
+
+syntax = "proto3";
+package schema;
+// SharedLink is a struct that defines the detail info shared by users.
+message SharedLink {
+    string url = 1;
+    map<string,string> params = 2;
+    string hash = 3;
+}
+// SharedLinkStorage uses a ordered list of params to get the same hash.
+message SharedLinkStorage {
+    string url = 1;
+    repeated ShareLinkParam param = 2;
+}
+message ShareLinkParam {
+    string key = 1;
+    string value = 2;
+}

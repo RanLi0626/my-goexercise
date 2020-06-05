@@ -1,0 +1,1099 @@
+[
+  {
+    "cardType": "yieldMatrixCard",
+    "cardTitle": {
+      "name": "Yield",
+      "icon": "iconYieldDrivers",
+      "color": "#009FF2"
+    },
+    "sectionView": [
+      {
+        "sectionTitle": "",
+        "extractFunctionName": "extractObjectByArraySection",
+        "extractParams": [
+          {
+            "dataPath": ["time_range"],
+            "dataTrait": { "data_type": 25 },
+            "extractKey": ["start"]
+          },
+          {
+            "dataPath": ["payload", "yield_data", "yield_matrix"],
+            "dataTrait": { "data_type": 25 },
+            "extractKey": [
+              "planted_area_in_acres",
+              "harvest_area_in_acres",
+              "yield_total_in_bushels",
+              "yield_per_acre_in_bushels",
+              "yield_per_hacter_in_kg"
+            ]
+          },
+          {
+            "dataPath": ["payload", "yield_data"],
+            "dataTrait": { "data_type": 25 },
+            "extractKey": ["per_crop_yield"]
+          }
+        ],
+        "formatFunctionName": "formatKeyValueData",
+        "formatParams": [],
+        "sectionName": "keyValue"
+      }
+    ],
+    "sectionEdit": [],
+    "dictionary": [
+      { "attrKey": "start", "order": 0 },
+      { "attrKey": "per_crop_yield", "order": 0 },
+      { "attrKey": "crop_type", "order": 1 },
+      { "attrKey": "planted_area_in_acres", "order": 2 },
+      { "attrKey": "harvest_area_in_acres", "order": 3 },
+      { "attrKey": "yield_total_in_bushels", "order": 4 },
+      { "attrKey": "yield_total_in_kg", "order": 5 },
+      { "attrKey": "yield_per_acre_in_bushels", "order": 6 },
+      { "attrKey": "yield_per_hacter_in_kg", "order": 7 }
+    ]
+  },
+  {
+    "cardType": "keyValueCard",
+    "cardTitle": {
+      "name": "Planted Crop",
+      "icon": "iconPlantvolume",
+      "color": "#F33196"
+    },
+    "sectionView": [
+      {
+        "sectionTitle": "",
+        "extractFunctionName": "extractCropTypeStatsSection",
+        "extractParams": [
+          {
+            "dataPath": ["payload", "crop_type_stats_data", "crop_type_stats"],
+            "dataTrait": { "data_type": 3 },
+            "extractKey": ["crop_type", "field_size"]
+          }
+        ],
+        "formatFunctionName": "formatKeyValueData",
+        "formatParams": [],
+        "sectionName": "keyValue"
+      }
+    ],
+    "sectionEdit": [],
+    "dictionary": [
+      {
+        "attrKey": "crop_type",
+        "data_type": 2,
+        "modifier": 1,
+        "displayName": { "crop_type": "Crop Types" },
+        "displayType": "crop_type",
+        "unit": {},
+        "validationRules": {},
+        "order": 1
+      },
+      { "attrKey": "field_size", "order": 2 }
+    ]
+  },
+  {
+    "cardType": "cropRotationCard",
+    "cardTitle": {
+      "name": "Crop Rotation",
+      "icon": "iconCroprotation",
+      "color": "#23B60B"
+    },
+    "sectionView": [
+      {
+        "sectionTitle": "",
+        "extractFunctionName": "extractObjectByArraySection",
+        "extractParams": [
+          {
+            "dataPath": ["payload", "crop_rotation_data"],
+            "dataTrait": { "data_type": 28 },
+            "extractKey": ["confidence", "rotated_crop_types"]
+          }
+        ],
+        "formatFunctionName": "formatKeyValueData",
+        "formatParams": [],
+        "sectionName": "keyValue"
+      },
+      {
+        "sectionTitle": "Rotation History",
+        "extractFunctionName": "extractObjectBySection",
+        "extractParams": [
+          {
+            "dataPath": ["time_range"],
+            "dataTrait": { "data_type": 2 },
+            "extractKey": ["start"]
+          },
+          {
+            "dataPath": ["payload", "crop_types_data"],
+            "dataTrait": { "data_type": 2 },
+            "extractKey": ["crop_types"]
+          }
+        ],
+        "formatFunctionName": "formatKeyValueData",
+        "formatParams": [],
+        "sectionName": "cropType"
+      }
+    ],
+    "sectionEdit": [],
+    "dictionary": [
+      {
+        "attrKey": "start",
+        "data_type": 0,
+        "displayName": { "start": "Crop Type Date" },
+        "displayType": "date",
+        "unit": {},
+        "validationRules": {
+          "start": [
+            { "key": "dateRequire", "params": [] },
+            { "key": "dateRange", "params": [] }
+          ]
+        },
+        "order": 0
+      },
+      {
+        "attrKey": "crop_types",
+        "data_type": 2,
+        "modifier": 1,
+        "displayName": { "crop_types": "Crop Types" },
+        "displayType": "crop_type",
+        "unit": {},
+        "validationRules": { "crop_types": [{ "key": "required", "params": [] }] },
+        "order": 1
+      },
+      { "attrKey": "is_crop_rotated", "order": 2 },
+      { "attrKey": "rotated_crop_types", "order": 3 },
+      { "attrKey": "confidence", "order": 4 }
+    ]
+  },
+  {
+    "cardType": "keyValueCard",
+    "cardTitle": {
+      "name": "Elevation",
+      "icon": "iconElevation",
+      "color": "#E00ACB"
+    },
+    "sectionView": [
+      {
+        "sectionTitle": "",
+        "extractFunctionName": "extractObjectByArraySection",
+        "extractParams": [
+          {
+            "dataPath": ["payload", "elevation_data"],
+            "dataTrait": { "data_type": 5 },
+            "extractKey": ["elevation_meter", "slope_degree"]
+          }
+        ],
+        "formatFunctionName": "formatKeyValueData",
+        "formatParams": [],
+        "sectionName": "keyValue"
+      }
+    ],
+    "sectionEdit": [],
+    "dictionary": [
+      { "attrKey": "elevation_meter", "order": 1 },
+      {
+        "attrKey": "slope_degree",
+        "order": 2,
+        "tooltip": "Slope is the rate of elevation change. It is calculated using the average gradient between each pixel and its 4 connected neighbors at a resolution of 90M using DEM."
+      }
+    ]
+  },
+  {
+    "cardType": "keyValueCard",
+    "cardTitle": {
+      "name": "Field Dimensions",
+      "icon": "iconstreetview",
+      "color": "#009CA6",
+      "button": "rotation3D"
+    },
+    "sectionView": [
+      {
+        "sectionTitle": "",
+        "extractFunctionName": "extractObjectByArraySection",
+        "extractParams": [
+          {
+            "dataPath": ["payload", "field_data"],
+            "dataTrait": { "data_type": 29 },
+            "extractKey": ["area_in_hectares", "compactness", "rectangularity"]
+          }
+        ],
+        "formatFunctionName": "formatKeyValueData",
+        "formatParams": [],
+        "sectionName": "keyValue"
+      }
+    ],
+    "sectionEdit": [],
+    "dictionary": [
+      { "attrKey": "area_in_hectares", "order": 1 },
+      {
+        "attrKey": "compactness",
+        "order": 2,
+        "tooltip": "Compactness is normalized to an index between 0 to 1. The larger the index, the more compact the field. The calculation for compactness is perimeter^2 / (4 * π * area)."
+      },
+      {
+        "attrKey": "rectangularity",
+        "order": 3,
+        "tooltip": "Squareness is normalized to an index between 0 to 1. At a squareness value of 1, the field is perfectly square."
+      }
+    ]
+  },
+  {
+    "cardType": "keyValueCard",
+    "cardTitle": {
+      "name": "Ownership",
+      "icon": "iconOwnership",
+      "color": "#0066FF"
+    },
+    "sectionView": [
+      {
+        "sectionTitle": "",
+        "extractFunctionName": "extractObjectByArraySection",
+        "extractParams": [
+          {
+            "dataPath": ["payload", "ownership_data"],
+            "dataTrait": { "data_type": 39 },
+            "extractKey": [
+              "owner_name",
+              "address_line",
+              "city_name",
+              "state_name",
+              "zipcode"
+            ]
+          }
+        ],
+        "formatFunctionName": "formatKeyValueData",
+        "formatParams": [],
+        "sectionName": "keyValue"
+      }
+    ],
+    "sectionEdit": [],
+    "dictionary": [
+      { "attrKey": "owner_name", "order": 1 },
+      { "attrKey": "address_line", "order": 2 },
+      { "attrKey": "city_name", "order": 3 },
+      { "attrKey": "state_name", "order": 4 },
+      { "attrKey": "zipcode", "order": 5 }
+    ]
+  },
+  {
+    "cardType": "keyValueCard",
+    "cardTitle": {
+      "name": "Distance",
+      "icon": "iconDistance",
+      "color": "#6E4B3F"
+    },
+    "sectionView": [
+      {
+        "sectionTitle": "",
+        "extractFunctionName": "extractObjectByArraySection",
+        "extractParams": [
+          {
+            "dataPath": ["payload", "distance_data"],
+            "dataTrait": { "data_type": 4 },
+            "extractKey": [
+              "distance_to_water_in_meters",
+              "distance_to_road_in_meters",
+              "distance_to_town_in_meters"
+            ]
+          }
+        ],
+        "formatFunctionName": "formatKeyValueData",
+        "formatParams": [],
+        "sectionName": "keyValue"
+      }
+    ],
+    "sectionEdit": [],
+    "dictionary": [
+      { "attrKey": "distance_to_water_in_meters", "order": 1 },
+      { "attrKey": "distance_to_road_in_meters", "order": 2 },
+      { "attrKey": "distance_to_town_in_meters", "order": 3 }
+    ]
+  },
+  {
+    "cardType": "keyValueCard",
+    "cardTitle": {
+      "name": "Crop Productivity Index",
+      "icon": "iconPlantvolume",
+      "color": "#FF8D02"
+    },
+    "sectionView": [
+      {
+        "sectionTitle": "",
+        "extractFunctionName": "extractArrayValueByArraySection",
+        "extractParams": [
+          {
+            "dataPath": ["payload", "crop_productivity_index_data", "productivity_index"],
+            "dataTrait": { "data_type": 38 },
+            "extractKey": ["crop_category", "index"]
+          }
+        ],
+        "formatFunctionName": "formatKeyValueData",
+        "formatParams": [],
+        "sectionName": "keyValue"
+      }
+    ],
+    "sectionEdit": [],
+    "dictionary": [
+      { "attrKey": "crop_category", "order": 1 },
+      { "attrKey": "index", "order": 2 }
+    ]
+  },
+  {
+    "cardType": "keyValueCard",
+    "cardTitle": {
+      "name": "Flood Frequency",
+      "icon": "iconFlood",
+      "color": "#F23A30"
+    },
+    "sectionView": [
+      {
+        "sectionTitle": "",
+        "extractFunctionName": "extractObjectByArraySection",
+        "extractParams": [
+          {
+            "dataPath": ["payload", "flooding_data"],
+            "dataTrait": { "data_type": 36 },
+            "extractKey": ["dominant_frequency", "max_frequency", "duration"]
+          }
+        ],
+        "formatFunctionName": "formatKeyValueData",
+        "formatParams": [],
+        "sectionName": "keyValue"
+      }
+    ],
+    "sectionEdit": [],
+    "dictionary": [
+      { "attrKey": "dominant_frequency", "order": 1 },
+      { "attrKey": "max_frequency", "order": 2 },
+      { "attrKey": "duration", "order": 3 }
+    ]
+  },
+  {
+    "cardType": "soilComponentCard",
+    "cardTitle": {
+      "name": "Soil",
+      "icon": "iconSoil",
+      "color": "#6E4B3F"
+    },
+    "sectionView": [
+      {
+        "sectionTitle": "",
+        "extractFunctionName": "extractObjectByArraySection",
+        "extractParams": [
+          {
+            "dataPath": ["payload", "soil_component_data"],
+            "dataTrait": { "data_type": 31 },
+            "extractKey": ["soil_texture_type"]
+          }
+        ],
+        "formatFunctionName": "formatKeyValueData",
+        "formatParams": [],
+        "sectionName": "image"
+      },
+      {
+        "sectionTitle": "",
+        "extractFunctionName": "extractArrayValueByArraySection",
+        "extractParams": [
+          {
+            "dataPath": ["payload", "soil_component_data", "soil_component"],
+            "dataTrait": { "data_type": 31 },
+            "extractKey": [
+              "soil_depth_range",
+              "soil_depth_level",
+              "component_percentage",
+              "sand_fraction",
+              "silt_fraction",
+              "clay_fraction",
+              "ph_level",
+              "nitrogen_in_ppm"
+            ]
+          }
+        ],
+        "formatFunctionName": "formatKeyValueData",
+        "formatParams": [],
+        "sectionName": "keyValue"
+      },
+      {
+        "sectionTitle": "",
+        "extractFunctionName": "extractArrayValueByArraySection",
+        "extractParams": [
+          {
+            "dataPath": ["payload", "soil_component_data", "soil_component"],
+            "dataTrait": { "data_type": 31 },
+            "extractKey": ["component_name"]
+          }
+        ],
+        "formatFunctionName": "formatKeyValueData",
+        "formatParams": [],
+        "sectionName": "massage"
+      }
+    ],
+    "sectionEdit": [],
+    "dictionary": [
+      { "attrKey": "soil_texture_type", "order": 1 },
+      {
+        "attrKey": "soil_depth_range",
+        "data_type": 2,
+        "modifier": 1,
+        "displayName": { "soil_depth_range": "Soil Depth Range" },
+        "displayType": "soil_depth_range",
+        "unit": {},
+        "validationRules": {},
+        "order": 2
+      },
+      {
+        "attrKey": "soil_depth_level",
+        "data_type": 2,
+        "modifier": 1,
+        "displayName": { "soil_depth_level": "Soil Depth Level" },
+        "displayType": "string",
+        "unit": {},
+        "validationRules": {},
+        "order": 3
+      },
+      { "attrKey": "component_name", "order": 4 },
+      { "attrKey": "component_percentage", "order": 5 },
+      { "attrKey": "sand_fraction", "order": 6 },
+      { "attrKey": "silt_fraction", "order": 7 },
+      { "attrKey": "clay_fraction", "order": 8 },
+      { "attrKey": "ph_level", "order": 9 },
+      { "attrKey": "nitrogen_in_ppm", "order": 10 }
+    ]
+  },
+  {
+    "cardType": "keyValueCard",
+    "cardTitle": {
+      "name": "Soil Organic Matter (%)",
+      "icon": "iconSoil",
+      "color": "#8B2806"
+    },
+    "sectionView": [
+      {
+        "sectionTitle": "",
+        "extractFunctionName": "extractArrayValueByArraySection",
+        "extractParams": [
+          {
+            "dataPath": ["payload", "soil_organic_matter", "soil_organic_matter"],
+            "dataTrait": { "data_type": 40 },
+            "extractKey": ["soil_depth_range", "soil_depth_level", "organic_carbon"]
+          }
+        ],
+        "formatFunctionName": "formatKeyValueData",
+        "formatParams": [],
+        "sectionName": "keyValue"
+      }
+    ],
+    "sectionEdit": [],
+    "dictionary": [
+      {
+        "attrKey": "soil_depth_range",
+        "data_type": 2,
+        "modifier": 1,
+        "displayName": { "soil_depth_range": "Depth" },
+        "displayType": "soil_depth_range",
+        "unit": { "soil_depth_range": "inches" },
+        "validationRules": {},
+        "order": 1
+      },
+      {
+        "attrKey": "soil_depth_level",
+        "data_type": 0,
+        "modifier": 1,
+        "displayName": { "soil_depth_level": "Soil Depth Level" },
+        "displayType": "string",
+        "unit": {},
+        "validationRules": {},
+        "order": 2
+      },
+      { "attrKey": "organic_carbon", "order": 3 }
+    ]
+  },
+  {
+    "cardType": "chartCard",
+    "cardTitle": {
+      "name": "NDVI",
+      "icon": "iconNDVI",
+      "color": "#F40067"
+    },
+    "sectionView": [
+      {
+        "sectionTitle": "",
+        "extractFunctionName": "extractObjectBySection",
+        "extractParams": [
+          {
+            "dataPath": ["time_range"],
+            "dataTrait": { "data_type": 18 },
+            "extractKey": ["start"]
+          },
+          {
+            "dataPath": ["payload", "satellite_data"],
+            "dataTrait": { "data_type": 18 },
+            "extractKey": ["histogram_of_ndvi"]
+          }
+        ],
+        "formatFunctionName": "formatYearViewChart",
+        "formatParams": [],
+        "sectionName": "chart",
+        "chartType": "Line",
+        "chartOption": {
+          "tooltip": {
+            "isHtml": true,
+            "showColorCode": true,
+            "textStyle": { "color": "#FF0000", "fontSize": 30, "bold": true }
+          },
+          "colors": ["#4285F4"],
+          "legend": {
+            "position": "none"
+          },
+          "interpolateNulls": true
+        }
+      }
+    ],
+    "sectionEdit": [],
+    "dictionary": [
+      {
+        "attrKey": "start",
+        "data_type": 0,
+        "displayName": { "start": "" },
+        "displayType": "date",
+        "unit": {},
+        "validationRules": {
+          "start": [
+            { "key": "dateRequire", "params": [] },
+            { "key": "dateRange", "params": [] }
+          ]
+        },
+        "order": 1
+      },
+      { "attrKey": "histogram_of_ndvi", "order": 2 }
+    ]
+  },
+  {
+    "cardType": "chartCard",
+    "cardTitle": {
+      "name": "Growing Degree Days",
+      "icon": "iconYieldDrivers",
+      "color": "#43A547"
+    },
+    "sectionView": [
+      {
+        "sectionTitle": "",
+        "extractFunctionName": "extractObjectBySection",
+        "extractParams": [
+          {
+            "dataPath": ["time_range"],
+            "dataTrait": { "data_type": 11 },
+            "extractKey": ["start"]
+          },
+          {
+            "dataPath": ["payload", "growing_degrees_data"],
+            "dataTrait": { "data_type": 11 },
+            "extractKey": ["growing_degrees_day"]
+          }
+        ],
+        "formatFunctionName": "formatYearViewChart",
+        "formatParams": [],
+        "sectionName": "chart",
+        "chartType": "Line",
+        "chartOption": {
+          "tooltip": {
+            "isHtml": true,
+            "showColorCode": true,
+            "textStyle": { "color": "#FF0000", "fontSize": 30, "bold": true }
+          },
+          "colors": ["#4285F4"],
+          "legend": {
+            "position": "none"
+          },
+          "interpolateNulls": true
+        }
+      }
+    ],
+    "sectionEdit": [],
+    "dictionary": [
+      {
+        "attrKey": "start",
+        "data_type": 0,
+        "displayName": { "start": "" },
+        "displayType": "date",
+        "unit": {},
+        "validationRules": {
+          "start": [
+            { "key": "dateRequire", "params": [] },
+            { "key": "dateRange", "params": [] }
+          ]
+        },
+        "order": 1
+      },
+      { "attrKey": "growing_degrees_day", "order": 2 }
+    ]
+  },
+  {
+    "cardType": "chartCard",
+    "cardTitle": {
+      "name": "End-Start Frosting Date",
+      "icon": "iconfrosting",
+      "color": "#0066FF"
+    },
+    "sectionView": [
+      {
+        "sectionTitle": "",
+        "extractFunctionName": "extractObjectBySection",
+        "extractParams": [
+          {
+            "dataPath": ["time_range"],
+            "dataTrait": { "data_type": 37 },
+            "extractKey": ["start"]
+          },
+          {
+            "dataPath": ["payload", "frost_day_data"],
+            "dataTrait": { "data_type": 37 },
+            "extractKey": ["last_frost_time", "first_frost_time"]
+          }
+        ],
+        "formatFunctionName": "formatStartEndViewChart",
+        "formatParams": [],
+        "sectionName": "chart",
+        "chartType": "Timeline",
+        "chartOption": {
+          "colors": ["#D2670D"],
+          "hAxis": {
+            "format": "MMM dd"
+          },
+          "legend": {
+            "position": "none"
+          },
+          "interpolateNulls": true
+        }
+      }
+    ],
+    "sectionEdit": [],
+    "dictionary": [
+      {
+        "attrKey": "start",
+        "data_type": 0,
+        "displayName": { "start": "" },
+        "displayType": "date",
+        "unit": {},
+        "validationRules": {
+          "start": [
+            { "key": "dateRequire", "params": [] },
+            { "key": "dateRange", "params": [] }
+          ]
+        },
+        "order": 1
+      },
+      { "attrKey": "first_frost_time", "order": 3 },
+      { "attrKey": "last_frost_time", "order": 2 }
+    ]
+  },
+  {
+    "cardType": "chartYearsCard",
+    "cardTitle": {
+      "name": "Chart",
+      "icon": "iconChart",
+      "color": "#FFA800"
+    },
+    "sectionView": [
+      {
+        "sectionTitle": "TEMPERATURE (°F)",
+        "extractFunctionName": "extractObjectBySection",
+        "extractParams": [
+          {
+            "dataPath": ["time_range"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": ["start"]
+          },
+          {
+            "dataPath": ["payload", "climate_data"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": [
+              "min_temperature_in_celsius_degrees",
+              "max_temperature_in_celsius_degrees"
+            ]
+          }
+        ],
+        "formatFunctionName": "formatYearViewChart",
+        "formatParams": [],
+        "sectionName": "chart",
+        "chartType": "Line",
+        "chartOption": {
+          "tooltip": {
+            "isHtml": true,
+            "showColorCode": true,
+            "textStyle": { "color": "#FF0000", "fontSize": 30, "bold": true }
+          },
+          "colors": ["#4285F4", "#D2670D"],
+          "legend": {
+            "position": "none"
+          },
+          "interpolateNulls": true
+        }
+      },
+      {
+        "sectionTitle": "PRECIPITATION (mm)",
+        "extractFunctionName": "extractObjectBySection",
+        "extractParams": [
+          {
+            "dataPath": ["time_range"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": ["start"]
+          },
+          {
+            "dataPath": ["payload", "climate_data"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": ["precipitation_accumulation_in_mms"]
+          }
+        ],
+        "formatFunctionName": "formatYearViewChart",
+        "formatParams": [],
+        "sectionName": "chart",
+        "chartType": "Line",
+        "chartOption": {
+          "tooltip": {
+            "isHtml": true,
+            "showColorCode": true,
+            "textStyle": { "color": "#FF0000", "fontSize": 30, "bold": true }
+          },
+          "colors": ["#4285F4", "#D2670D"],
+          "legend": {
+            "position": "none"
+          },
+          "interpolateNulls": true
+        }
+      },
+      {
+        "sectionTitle": "EVAPOTRANSPIRATION (mm)",
+        "extractFunctionName": "extractObjectBySection",
+        "extractParams": [
+          {
+            "dataPath": ["time_range"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": ["start"]
+          },
+          {
+            "dataPath": ["payload", "climate_data"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": [
+              "actual_evapotranspiration_in_mms",
+              "reference_evapotranspiration_in_mms"
+            ]
+          }
+        ],
+        "formatFunctionName": "formatYearViewChart",
+        "formatParams": [],
+        "sectionName": "chart",
+        "chartType": "Line",
+        "chartOption": {
+          "tooltip": {
+            "isHtml": true,
+            "showColorCode": true,
+            "textStyle": { "color": "#FF0000", "fontSize": 30, "bold": true }
+          },
+          "colors": ["#4285F4", "#D2670D"],
+          "legend": {
+            "position": "none"
+          },
+          "interpolateNulls": true
+        }
+      },
+      {
+        "sectionTitle": "CLIMATE WATER DEFICIT (mm)",
+        "extractFunctionName": "extractObjectBySection",
+        "extractParams": [
+          {
+            "dataPath": ["time_range"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": ["start"]
+          },
+          {
+            "dataPath": ["payload", "climate_data"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": [
+              "climate_water_deficit_in_mms"
+            ]
+          }
+        ],
+        "formatFunctionName": "formatYearViewChart",
+        "formatParams": [],
+        "sectionName": "chart",
+        "chartType": "Line",
+        "chartOption": {
+          "tooltip": {
+            "isHtml": true,
+            "showColorCode": true,
+            "textStyle": { "color": "#FF0000", "fontSize": 30, "bold": true }
+          },
+          "colors": ["#4285F4", "#D2670D"],
+          "legend": {
+            "position": "none"
+          },
+          "interpolateNulls": true
+        }
+      },
+      {
+        "sectionTitle": "VAPOR PRESSURE (kPa)",
+        "extractFunctionName": "extractObjectBySection",
+        "extractParams": [
+          {
+            "dataPath": ["time_range"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": ["start"]
+          },
+          {
+            "dataPath": ["payload", "climate_data"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": [
+              "vapor_pressure_in_kpa",
+              "vapor_pressure_deficit_in_kpa"
+            ]
+          }
+        ],
+        "formatFunctionName": "formatYearViewChart",
+        "formatParams": [],
+        "sectionName": "chart",
+        "chartType": "Line",
+        "chartOption": {
+          "tooltip": {
+            "isHtml": true,
+            "showColorCode": true,
+            "textStyle": { "color": "#FF0000", "fontSize": 30, "bold": true }
+          },
+          "colors": ["#4285F4", "#D2670D"],
+          "legend": {
+            "position": "none"
+          },
+          "interpolateNulls": true
+        }
+      },
+      {
+        "sectionTitle": "PALMER DROUGHT SEVERITY",
+        "extractFunctionName": "extractObjectBySection",
+        "extractParams": [
+          {
+            "dataPath": ["time_range"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": ["start"]
+          },
+          {
+            "dataPath": ["payload", "climate_data"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": [
+              "palmer_drought_severity_index"
+            ]
+          }
+        ],
+        "formatFunctionName": "formatYearViewChart",
+        "formatParams": [],
+        "sectionName": "chart",
+        "chartType": "Line",
+        "chartOption": {
+          "tooltip": {
+            "isHtml": true,
+            "showColorCode": true,
+            "textStyle": { "color": "#FF0000", "fontSize": 30, "bold": true }
+          },
+          "colors": ["#4285F4", "#D2670D"],
+          "legend": {
+            "position": "none"
+          },
+          "interpolateNulls": true
+        }
+      },
+      {
+        "sectionTitle": "DOWNWARD SURFACE SHORTWAVE RADIATION (W/m^2)",
+        "extractFunctionName": "extractObjectBySection",
+        "extractParams": [
+          {
+            "dataPath": ["time_range"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": ["start"]
+          },
+          {
+            "dataPath": ["payload", "climate_data"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": [
+              "downward_surface_shortwave_radiation_in_watt_per_m2"
+            ]
+          }
+        ],
+        "formatFunctionName": "formatYearViewChart",
+        "formatParams": [],
+        "sectionName": "chart",
+        "chartType": "Line",
+        "chartOption": {
+          "tooltip": {
+            "isHtml": true,
+            "showColorCode": true,
+            "textStyle": { "color": "#FF0000", "fontSize": 30, "bold": true }
+          },
+          "colors": ["#4285F4", "#D2670D"],
+          "legend": {
+            "position": "none"
+          },
+          "interpolateNulls": true
+        }
+      },
+      {
+        "sectionTitle": "WIND SPEED (m/s)",
+        "extractFunctionName": "extractObjectBySection",
+        "extractParams": [
+          {
+            "dataPath": ["time_range"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": ["start"]
+          },
+          {
+            "dataPath": ["payload", "climate_data"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": [
+              "wind_speed_in_meter_per_second"
+            ]
+          }
+        ],
+        "formatFunctionName": "formatYearViewChart",
+        "formatParams": [],
+        "sectionName": "chart",
+        "chartType": "Line",
+        "chartOption": {
+          "tooltip": {
+            "isHtml": true,
+            "showColorCode": true,
+            "textStyle": { "color": "#FF0000", "fontSize": 30, "bold": true }
+          },
+          "colors": ["#4285F4", "#D2670D"],
+          "legend": {
+            "position": "none"
+          },
+          "interpolateNulls": true
+        }
+      },
+      {
+        "sectionTitle": "SNOW WATER AND RUNOFF (mm)",
+        "extractFunctionName": "extractObjectBySection",
+        "extractParams": [
+          {
+            "dataPath": ["time_range"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": ["start"]
+          },
+          {
+            "dataPath": ["payload", "climate_data"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": [
+              "water_runoff_in_mms",
+              "snow_water_equivalent_in_mms"
+            ]
+          }
+        ],
+        "formatFunctionName": "formatYearViewChart",
+        "formatParams": [],
+        "sectionName": "chart",
+        "chartType": "Line",
+        "chartOption": {
+          "tooltip": {
+            "isHtml": true,
+            "showColorCode": true,
+            "textStyle": { "color": "#FF0000", "fontSize": 30, "bold": true }
+          },
+          "colors": ["#4285F4", "#D2670D"],
+          "legend": {
+            "position": "none"
+          },
+          "interpolateNulls": true
+        }
+      },
+      {
+        "sectionTitle": "SOIL MOISTURE (mm)",
+        "extractFunctionName": "extractObjectBySection",
+        "extractParams": [
+          {
+            "dataPath": ["time_range"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": ["start"]
+          },
+          {
+            "dataPath": ["payload", "climate_data"],
+            "dataTrait": { "data_type": 21 },
+            "extractKey": [
+              "soil_moisture_in_mms"
+            ]
+          }
+        ],
+        "formatFunctionName": "formatYearViewChart",
+        "formatParams": [],
+        "sectionName": "chart",
+        "chartType": "Line",
+        "chartOption": {
+          "tooltip": {
+            "isHtml": true,
+            "showColorCode": true,
+            "textStyle": { "color": "#FF0000", "fontSize": 30, "bold": true }
+          },
+          "colors": ["#4285F4", "#D2670D"],
+          "legend": {
+            "position": "none"
+          },
+          "interpolateNulls": true
+        }
+      }
+    ],
+    "sectionEdit": [],
+    "dictionary": [
+      {
+        "attrKey": "start",
+        "data_type": 0,
+        "displayName": { "start": "" },
+        "displayType": "date",
+        "unit": {},
+        "validationRules": {
+          "start": [
+            { "key": "dateRequire", "params": [] },
+            { "key": "dateRange", "params": [] }
+          ]
+        },
+        "order": 1
+      },
+      { "attrKey": "min_temperature_in_celsius_degrees", "order": 2 },
+      { "attrKey": "max_temperature_in_celsius_degrees", "order": 3 },
+      { "attrKey": "precipitation_accumulation_in_mms", "order": 4 },
+      { "attrKey": "soil_moisture_in_mms", "order": 5 },
+      { "attrKey": "actual_evapotranspiration_in_mms", "order": 6 },
+      { "attrKey": "reference_evapotranspiration_in_mms", "order": 7 },
+      { "attrKey": "climate_water_deficit_in_mms", "order": 8 },
+      { "attrKey": "vapor_pressure_in_kpa", "order": 9 },
+      { "attrKey": "vapor_pressure_deficit_in_kpa", "order": 10 },
+      { "attrKey": "palmer_drought_severity_index", "order": 11 },
+      { "attrKey": "downward_surface_shortwave_radiation_in_watt_per_m2", "order": 12 },
+      { "attrKey": "wind_speed_in_meter_per_second", "order": 13 },
+      { "attrKey": "water_runoff_in_mms", "order": 14 },
+      { "attrKey": "snow_water_equivalent_in_mms", "order": 15 }
+    ]
+  },
+  {
+    "cardType": "keyValueCard",
+    "cardTitle": {
+      "name": "Agro Ecological Zone",
+      "icon": "iconAZE",
+      "color": "#009CA6"
+    },
+    "sectionView": [
+      {
+        "sectionTitle": "",
+        "extractFunctionName": "extractAEZSection",
+        "extractParams": [
+          {
+            "dataPath": ["payload", "agro_ecology_zone_data", "zones"],
+            "dataTrait": { "data_type": 44 },
+            "extractKey": ["cluster_annotation", "hierarchical_label"]
+          }
+        ],
+        "formatFunctionName": "formatKeyValueData",
+        "formatParams": [],
+        "sectionName": "keyValue"
+      }
+    ],
+    "sectionEdit": [],
+    "dictionary": [
+      { "attrKey": "hierarchical_label", "order": 1 },
+      { "attrKey": "cluster_annotation", "order": 2 }
+    ]
+  }
+]
